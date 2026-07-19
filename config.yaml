@@ -1,0 +1,60 @@
+# =====================================================================
+# Neuroscience at Work — Radar configuration
+# Edit this file to tune what the weekly scan looks for.
+# =====================================================================
+
+# Used only for polite identification to the free APIs (OpenAlex/Crossref).
+# You can leave the example or put your real email — it is NOT a secret/login.
+contact_email: "you@example.com"
+
+# How far back each weekly run looks (in days). 8 = one week + small overlap.
+since_days: 8
+
+# Safety limits so a run never returns thousands of rows.
+max_per_query: 15
+max_new_total: 120
+
+# A candidate is kept only if its title/venue contains at least ONE of these
+# words. This filters out off-topic hits from the broad search queries.
+must_match_any:
+  - work
+  - job
+  - employee
+  - workplace
+  - occupational
+  - burnout
+  - stress
+  - remote
+  - hybrid
+  - attention
+  - focus
+  - leadership
+  - engagement
+  - manager
+  - cognitive
+  - wellbeing
+  - technostress
+
+# The search phrases sent to every enabled source. Add/remove freely.
+queries:
+  - "workplace burnout neuroscience"
+  - "occupational stress cortisol HPA axis"
+  - "remote work wellbeing productivity"
+  - "hybrid work employee outcomes"
+  - "attention interruptions knowledge workers"
+  - "psychological safety teams"
+  - "work engagement job demands resources"
+  - "human-AI collaboration workplace"
+  - "generative AI worker productivity"
+  - "technostress employees"
+  - "loneliness work social connection"
+  - "sleep deprivation cognitive performance work"
+  - "job strain cardiovascular disease"
+  - "manager training mental health at work"
+
+# Which free data sources to query (all keyless).
+sources:
+  openalex: true
+  crossref: true
+  europepmc: true
+  arxiv: true
