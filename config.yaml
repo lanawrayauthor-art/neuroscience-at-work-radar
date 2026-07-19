@@ -58,3 +58,67 @@ sources:
   crossref: true
   europepmc: true
   arxiv: true
+
+# --- Auto-scoring settings (optional; sensible defaults are built into the script) ---
+
+# How many top candidates to show in the weekly digest.md
+digest_top_n: 12
+
+# Journals/publishers that add trust points. Add your own (lowercase substrings).
+trusted_venues:
+  - lancet
+  - nature
+  - science
+  - nejm
+  - jama
+  - bmj
+  - plos
+  - pnas
+  - psychological science
+  - journal of applied psychology
+  - journal of occupational health psychology
+  - occupational and environmental medicine
+  - sleep
+  - current biology
+  - neuron
+  - nature reviews
+  - nature human behaviour
+  - management science
+  - quarterly journal of economics
+  - organization science
+  - frontiers
+  - journal of managerial psychology
+  - journal of happiness studies
+  - psychological bulletin
+  - american psychologist
+  - work & stress
+  - psychoneuroendocrinology
+  - world psychiatry
+
+# Intergovernmental / official sources that add trust points.
+intergov_venues:
+  - who
+  - world health
+  - oecd
+  - " ilo"
+  - eurofound
+  - surgeon general
+  - cdc
+  - niosh
+  - eu-osha
+
+# Phrases that flag a possible neuromyth (marked MYTH-CHECK, not auto-rejected).
+myth_triggers:
+  - dopamine detox
+  - dopamine fasting
+  - 8-second attention
+  - goldfish attention
+  - 10% of the brain
+  - ten percent of the brain
+  - reptilian brain
+  - amygdala hijack
+  - left-brain
+  - right-brain
+  - learning styles
+  - 10,000 hour
+  - neuro-linguistic programming
