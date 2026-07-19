@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Neuroscience at Work — Source Radar
-===================================
-Weekly scanner that looks for NEW scholarly sources at the intersection of
+Neuroscience at Work — Source Radar (with auto-scoring)
+=======================================================
+Weekly scanner that finds NEW scholarly sources at the intersection of
 neuroscience + psychology + workforce management, deduplicates them against the
-existing registry, and writes the new finds into a "for review" inbox.
+existing registry, AUTO-SCORES each find (a rough A?/B?/C? guess), flags possible
+neuromyths, and writes everything into a "for review" inbox + a short digest.md.
 
-It NEVER edits your master registry. It only proposes candidates that YOU approve.
+It NEVER edits your master registry and NEVER decides the final tier.
+The score is a hint to speed up your review — you (or Claude) confirm the real
+reliability tier and the neuromyth check before anything enters the master base.
 
-Data sources (all free, no API key required):
-  * OpenAlex          https://openalex.org
-  * Crossref          https://www.crossref.org
-  * Europe PMC        https://europepmc.org
-  * arXiv             https://arxiv.org
+Free data sources, no API key required: OpenAlex, Crossref, Europe PMC, arXiv.
 
-Run on GitHub Actions weekly (see .github/workflows/weekly-scan.yml), or locally:
+Run on GitHub Actions weekly (.github/workflows/weekly-scan.yml), or locally:
     python scan_sources.py               # normal run
     python scan_sources.py --selftest    # offline logic check (no internet)
 """
@@ -42,12 +41,39 @@ CONFIG_PATH = ROOT / "config.yaml"
 SEED_PATH = ROOT / "registry_seed.csv"
 CAND_DIR = ROOT / "candidates"
 INBOX_PATH = CAND_DIR / "inbox.csv"
+DIGEST_PATH = CAND_DIR / "digest.md"
 
-FIELDS = ["found_date", "source_api", "query", "title", "authors", "year",
-          "pub_date", "type", "venue", "open_access", "preprint", "doi", "url", "status"]
+# Important signals up front so the CSV is easy to skim.
+FIELDS = ["found_date", "auto_tier_guess", "auto_score", "myth_flag",
+          "source_api", "title", "authors", "year", "pub_date", "type", "venue",
+          "open_access", "preprint", "doi", "url", "query", "status"]
 
-UA = ("NeuroscienceAtWorkRadar/1.0 (+https://github.com/) "
+UA = ("NeuroscienceAtWorkRadar/1.1 (+https://github.com/) "
       "Python-urllib; research-source-monitor")
+
+# ---- defaults (can be overridden in config.yaml) ---------------------------
+DEFAULT_TRUSTED_VENUES = [
+    "lancet", "nature", "science", "new england journal", "nejm", "jama", "bmj",
+    "plos", "pnas", "proceedings of the national academy", "psychological science",
+    "journal of applied psychology", "journal of occupational health psychology",
+    "occupational and environmental medicine", "sleep", "current biology", "neuron",
+    "nature reviews", "nature human behaviour", "management science",
+    "quarterly journal of economics", "organization science", "frontiers",
+    "journal of managerial psychology", "journal of happiness studies",
+    "information systems research", "psychological bulletin", "american psychologist",
+    "health psychology", "work & stress", "work and stress",
+    "scandinavian journal of work", "journal of organizational behavior",
+    "academy of management", "psychoneuroendocrinology", "world psychiatry",
+]
+DEFAULT_INTERGOV = ["who", "world health", "oecd", " ilo", "eurofound",
+                    "surgeon general", "cdc", "niosh", "eu-osha"]
+DEFAULT_MYTH_TRIGGERS = [
+    "dopamine detox", "dopamine fasting", "8-second attention", "eight-second attention",
+    "goldfish attention", "10% of the brain", "10 percent of the brain",
+    "ten percent of the brain", "reptilian brain", "amygdala hijack",
+    "left-brain", "right-brain", "left brain", "right brain", "learning styles",
+    "10,000 hour", "10000 hour", "ten thousand hour", "neuro-linguistic programming",
+]
 
 
 # --------------------------------------------------------------------------- #
@@ -57,15 +83,13 @@ def norm_doi(doi: str) -> str:
     if not doi:
         return ""
     doi = doi.strip().lower()
-    doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", doi)
-    return doi
+    return re.sub(r"^https?://(dx\.)?doi\.org/", "", doi)
 
 
 def norm_title(title: str) -> str:
     if not title:
         return ""
-    t = title.lower()
-    t = re.sub(r"[^a-z0-9]+", " ", t)
+    t = re.sub(r"[^a-z0-9]+", " ", title.lower())
     return re.sub(r"\s+", " ", t).strip()
 
 
@@ -87,22 +111,22 @@ def load_config():
         "since_days": 8,
         "max_per_query": 15,
         "max_new_total": 120,
+        "digest_top_n": 12,
         "must_match_any": ["work", "job", "employee", "workplace", "occupational",
                            "burnout", "stress", "remote", "hybrid", "attention",
-                           "leadership", "engagement", "manager", "cognitive"],
+                           "focus", "leadership", "engagement", "manager", "cognitive",
+                           "wellbeing", "technostress"],
         "queries": [
-            "workplace burnout neuroscience",
-            "occupational stress cortisol",
-            "remote work wellbeing productivity",
-            "hybrid work employee outcomes",
-            "attention interruptions knowledge workers",
-            "psychological safety teams",
-            "work engagement job demands resources",
-            "human-AI collaboration workplace",
-            "technostress employees",
-            "loneliness work social connection",
+            "workplace burnout neuroscience", "occupational stress cortisol",
+            "remote work wellbeing productivity", "hybrid work employee outcomes",
+            "attention interruptions knowledge workers", "psychological safety teams",
+            "work engagement job demands resources", "human-AI collaboration workplace",
+            "technostress employees", "loneliness work social connection",
         ],
         "sources": {"openalex": True, "crossref": True, "europepmc": True, "arxiv": True},
+        "trusted_venues": DEFAULT_TRUSTED_VENUES,
+        "intergov_venues": DEFAULT_INTERGOV,
+        "myth_triggers": DEFAULT_MYTH_TRIGGERS,
     }
     if CONFIG_PATH.exists() and yaml is not None:
         try:
@@ -114,20 +138,65 @@ def load_config():
 
 
 def load_known():
-    """DOIs + normalized titles already in the registry seed and the inbox."""
     dois, titles = set(), set()
     for path in (SEED_PATH, INBOX_PATH):
         if not path.exists():
             continue
         with path.open(encoding="utf-8", newline="") as f:
             for row in csv.DictReader(f):
-                d = norm_doi(row.get("doi", ""))
-                t = norm_title(row.get("title", ""))
+                d, t = norm_doi(row.get("doi", "")), norm_title(row.get("title", ""))
                 if d:
                     dois.add(d)
                 if t:
                     titles.add(t)
     return dois, titles
+
+
+# --------------------------------------------------------------------------- #
+# auto-scoring
+# --------------------------------------------------------------------------- #
+def score_record(r, cfg):
+    """Rough triage score. Returns (score:int, tier_guess:str, myth_flag:str).
+    Tiers end with '?' on purpose — they are GUESSES for you to confirm."""
+    t = (r.get("title") or "").lower()
+    v = (r.get("venue") or "").lower()
+    typ = (r.get("type") or "").lower()
+    score = 0
+
+    # peer-reviewed vs preprint (the biggest trust signal we can read automatically)
+    if r.get("preprint") == "yes" or "preprint" in typ or "posted-content" in typ:
+        score -= 3
+    else:
+        score += 3
+
+    # evidence type
+    if any(k in t for k in ("meta-analysis", "meta analysis", "systematic review")):
+        score += 3
+    if "review" in typ or "review" in t:
+        score += 1
+    if any(k in typ for k in ("journal-article", "research-article", "article", "journal article")):
+        score += 1
+
+    # venue trust / intergovernmental source
+    if any(k in v for k in cfg["trusted_venues"]):
+        score += 3
+    if any(k in v for k in cfg["intergov_venues"]):
+        score += 3
+
+    # open access (minor convenience only — not a trust signal)
+    if r.get("open_access") == "OA":
+        score += 1
+
+    # topic relevance strength
+    hay = t + " " + v
+    matches = sum(1 for k in cfg["must_match_any"] if k.lower() in hay)
+    score += min(matches, 4)
+
+    # neuromyth flag (flag, do NOT penalize — the paper might be debunking the myth)
+    myth = "MYTH-CHECK" if any(m in t for m in cfg["myth_triggers"]) else ""
+
+    tier = "A?" if score >= 9 else "B?" if score >= 5 else "C?"
+    return score, tier, myth
 
 
 # --------------------------------------------------------------------------- #
@@ -151,15 +220,12 @@ def from_openalex(query, cutoff, cfg):
                             for a in (w.get("authorships") or [])[:6])
         venue = ((w.get("primary_location") or {}).get("source") or {}).get("display_name", "") or ""
         wtype = w.get("type", "") or ""
-        out.append(rec(
-            source_api="OpenAlex", query=query, title=(w.get("title") or "").strip(),
-            authors=authors, year=str(w.get("publication_year") or ""),
-            pub_date=w.get("publication_date", "") or "", type=wtype, venue=venue,
-            open_access="OA" if (w.get("open_access") or {}).get("is_oa") else "?",
-            preprint="yes" if wtype == "preprint" else "",
-            doi=norm_doi(w.get("doi") or ""),
-            url=w.get("doi") or w.get("id") or "",
-        ))
+        out.append(rec(source_api="OpenAlex", query=query, title=(w.get("title") or "").strip(),
+                       authors=authors, year=str(w.get("publication_year") or ""),
+                       pub_date=w.get("publication_date", "") or "", type=wtype, venue=venue,
+                       open_access="OA" if (w.get("open_access") or {}).get("is_oa") else "?",
+                       preprint="yes" if wtype == "preprint" else "",
+                       doi=norm_doi(w.get("doi") or ""), url=w.get("doi") or w.get("id") or ""))
     return out
 
 
@@ -177,14 +243,12 @@ def from_crossref(query, cutoff, cfg):
         year = str(dp[0]) if dp and dp[0] else ""
         pub_date = "-".join(str(x) for x in dp) if dp and dp[0] else ""
         wtype = it.get("type", "") or ""
-        out.append(rec(
-            source_api="Crossref", query=query, title=title, authors=authors,
-            year=year, pub_date=pub_date, type=wtype,
-            venue=(it.get("container-title") or [""])[0],
-            open_access="?", preprint="yes" if wtype == "posted-content" else "",
-            doi=norm_doi(it.get("DOI") or ""),
-            url=it.get("URL") or (("https://doi.org/" + it["DOI"]) if it.get("DOI") else ""),
-        ))
+        out.append(rec(source_api="Crossref", query=query, title=title, authors=authors,
+                       year=year, pub_date=pub_date, type=wtype,
+                       venue=(it.get("container-title") or [""])[0], open_access="?",
+                       preprint="yes" if wtype == "posted-content" else "",
+                       doi=norm_doi(it.get("DOI") or ""),
+                       url=it.get("URL") or (("https://doi.org/" + it["DOI"]) if it.get("DOI") else "")))
     return out
 
 
@@ -195,17 +259,15 @@ def from_europepmc(query, cutoff, cfg):
            "&resultType=lite&sort=P_PDATE_D%20desc")
     out = []
     for r in http_json(url).get("resultList", {}).get("result", []):
-        out.append(rec(
-            source_api="EuropePMC", query=query, title=(r.get("title") or "").strip(),
-            authors=r.get("authorString", "") or "", year=str(r.get("pubYear") or ""),
-            pub_date=r.get("firstPublicationDate", "") or "",
-            type=r.get("pubType", "") or "", venue=r.get("journalTitle", "") or "",
-            open_access="OA" if r.get("isOpenAccess") == "Y" else "?",
-            preprint="yes" if "preprint" in (r.get("pubType", "") or "").lower() else "",
-            doi=norm_doi(r.get("doi") or ""),
-            url=("https://doi.org/" + r["doi"]) if r.get("doi")
-                else (f"https://europepmc.org/abstract/{r.get('source','MED')}/{r.get('id','')}"),
-        ))
+        out.append(rec(source_api="EuropePMC", query=query, title=(r.get("title") or "").strip(),
+                       authors=r.get("authorString", "") or "", year=str(r.get("pubYear") or ""),
+                       pub_date=r.get("firstPublicationDate", "") or "",
+                       type=r.get("pubType", "") or "", venue=r.get("journalTitle", "") or "",
+                       open_access="OA" if r.get("isOpenAccess") == "Y" else "?",
+                       preprint="yes" if "preprint" in (r.get("pubType", "") or "").lower() else "",
+                       doi=norm_doi(r.get("doi") or ""),
+                       url=("https://doi.org/" + r["doi"]) if r.get("doi")
+                           else f"https://europepmc.org/abstract/{r.get('source','MED')}/{r.get('id','')}"))
     return out
 
 
@@ -216,30 +278,23 @@ def from_arxiv(query, cutoff, cfg):
            "&sortBy=submittedDate&sortOrder=descending")
     ns = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
     out = []
-    root = ET.fromstring(http_text(url))
-    for e in root.findall("a:entry", ns):
+    for e in ET.fromstring(http_text(url)).findall("a:entry", ns):
         published = (e.findtext("a:published", default="", namespaces=ns) or "")[:10]
         if published and published < cutoff:
             continue
         authors = ", ".join(a.findtext("a:name", default="", namespaces=ns)
                             for a in e.findall("a:author", ns)[:6])
         doi = e.findtext("arxiv:doi", default="", namespaces=ns) or ""
-        out.append(rec(
-            source_api="arXiv", query=query,
-            title=" ".join((e.findtext("a:title", default="", namespaces=ns) or "").split()),
-            authors=authors, year=published[:4], pub_date=published,
-            type="preprint", venue="arXiv", open_access="OA", preprint="yes",
-            doi=norm_doi(doi), url=e.findtext("a:id", default="", namespaces=ns) or "",
-        ))
+        out.append(rec(source_api="arXiv", query=query,
+                       title=" ".join((e.findtext("a:title", default="", namespaces=ns) or "").split()),
+                       authors=authors, year=published[:4], pub_date=published,
+                       type="preprint", venue="arXiv", open_access="OA", preprint="yes",
+                       doi=norm_doi(doi), url=e.findtext("a:id", default="", namespaces=ns) or ""))
     return out
 
 
-CONNECTORS = {
-    "openalex": from_openalex,
-    "crossref": from_crossref,
-    "europepmc": from_europepmc,
-    "arxiv": from_arxiv,
-}
+CONNECTORS = {"openalex": from_openalex, "crossref": from_crossref,
+              "europepmc": from_europepmc, "arxiv": from_arxiv}
 
 
 # --------------------------------------------------------------------------- #
@@ -250,29 +305,28 @@ def matches_topic(r, must_match_any):
     return any(k.lower() in hay for k in must_match_any) if must_match_any else True
 
 
-def scan(records_by_source):
-    """Given pre-fetched records (real run or selftest), filter+dedupe+write."""
-    cfg = load_config()
+def scan(records_by_source, cfg=None):
+    cfg = cfg or load_config()
     known_dois, known_titles = load_known()
-    seen_now_doi, seen_now_title = set(), set()
+    seen_doi, seen_title = set(), set()
     new_rows = []
     today = dt.date.today().isoformat()
 
-    for src, records in records_by_source.items():
+    for records in records_by_source.values():
         for r in records:
-            if not r["title"]:
-                continue
-            if not matches_topic(r, cfg["must_match_any"]):
+            if not r["title"] or not matches_topic(r, cfg["must_match_any"]):
                 continue
             d, t = norm_doi(r["doi"]), norm_title(r["title"])
-            if d and (d in known_dois or d in seen_now_doi):
-                continue
-            if t and (t in known_titles or t in seen_now_title):
+            if (d and (d in known_dois or d in seen_doi)) or (t and (t in known_titles or t in seen_title)):
                 continue
             if d:
-                seen_now_doi.add(d)
+                seen_doi.add(d)
             if t:
-                seen_now_title.add(t)
+                seen_title.add(t)
+            s, tier, myth = score_record(r, cfg)
+            r["auto_score"] = str(s)
+            r["auto_tier_guess"] = tier
+            r["myth_flag"] = myth
             r["found_date"] = today
             r["status"] = "NEW — to review"
             new_rows.append(r)
@@ -281,15 +335,15 @@ def scan(records_by_source):
         if len(new_rows) >= cfg["max_new_total"]:
             break
 
-    # newest first
-    new_rows.sort(key=lambda x: (x.get("pub_date", ""), x.get("year", "")), reverse=True)
+    # best (highest score) first, newest as tiebreak
+    new_rows.sort(key=lambda x: (int(x.get("auto_score") or 0), x.get("pub_date", "")), reverse=True)
     write_candidates(new_rows)
+    write_digest(new_rows, cfg)
     return new_rows
 
 
 def write_candidates(new_rows):
     CAND_DIR.mkdir(parents=True, exist_ok=True)
-    # append to cumulative inbox
     inbox_exists = INBOX_PATH.exists()
     with INBOX_PATH.open("a", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS)
@@ -297,7 +351,6 @@ def write_candidates(new_rows):
             w.writeheader()
         for r in new_rows:
             w.writerow({k: r.get(k, "") for k in FIELDS})
-    # also a dated weekly file for easy scanning
     if new_rows:
         iso = dt.date.today().isocalendar()
         weekly = CAND_DIR / f"candidates_{iso[0]}-W{iso[1]:02d}.csv"
@@ -306,6 +359,53 @@ def write_candidates(new_rows):
             w.writeheader()
             for r in new_rows:
                 w.writerow({k: r.get(k, "") for k in FIELDS})
+
+
+def write_digest(new_rows, cfg):
+    CAND_DIR.mkdir(parents=True, exist_ok=True)
+    today = dt.date.today().isoformat()
+    lines = [f"# Weekly source radar — digest ({today})", ""]
+    if not new_rows:
+        lines += ["No new sources this week. The radar ran and found nothing new "
+                  "beyond your registry. (This is normal some weeks.)", ""]
+        DIGEST_PATH.write_text("\n".join(lines), encoding="utf-8")
+        return
+
+    myth_rows = [r for r in new_rows if r.get("myth_flag")]
+    lines.append(f"Found **{len(new_rows)}** new candidate(s). "
+                 f"Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — "
+                 f"you or Claude set the real A/B/C tier and run the neuromyth check before "
+                 f"anything enters the master base.")
+    if myth_rows:
+        lines.append(f"\n> ⚠ {len(myth_rows)} item(s) contain a possible-neuromyth phrase "
+                     f"and are marked `MYTH-CHECK` — verify the claim before trusting.")
+    lines += ["", "## Top candidates", ""]
+
+    for i, r in enumerate(new_rows[:cfg.get("digest_top_n", 12)], 1):
+        title = r.get("title", "").strip()
+        venue = r.get("venue", "") or r.get("source_api", "")
+        year = r.get("year", "")
+        tier = r.get("auto_tier_guess", "")
+        score = r.get("auto_score", "")
+        oa = "OA" if r.get("open_access") == "OA" else ""
+        pre = "preprint" if r.get("preprint") == "yes" else (r.get("type", "") or "")
+        url = r.get("url", "")
+        myth = "  ⚠ MYTH-CHECK" if r.get("myth_flag") else ""
+        badge = " · ".join(x for x in [f"guess {tier}", f"score {score}", oa, pre] if x)
+        link = f"[link]({url})" if url else ""
+        lines.append(f"{i}. **{title}** — {venue} ({year})")
+        lines.append(f"   {badge} {link}{myth}")
+        lines.append("")
+
+    lines += ["---",
+              "Full list with all columns: `candidates/inbox.csv`  ·  "
+              "one file per week: `candidates/candidates_YYYY-Www.csv`",
+              "",
+              "**How the score works (rough triage only):** +peer-reviewed / "
+              "+meta-analysis or systematic review / +trusted journal or WHO-OECD-ILO-type "
+              "source / +on-topic keywords / −preprint. It speeds up your review; it does "
+              "**not** replace your judgement on trust or neuromyths."]
+    DIGEST_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
 def run_online():
@@ -326,59 +426,65 @@ def run_online():
                 print(f"    {name:>10}  '{query}'  -> {len(found)}")
             except Exception as e:
                 print(f"    {name:>10}  '{query}'  ! {str(e).splitlines()[0][:80]}")
-            time.sleep(1.0)  # be polite to the APIs
+            time.sleep(1.0)
         by_source[name] = got
-    new_rows = scan(by_source)
-    print(f"\n  NEW candidates written: {len(new_rows)}  ->  {INBOX_PATH}")
+    new_rows = scan(by_source, cfg)
+    print(f"\n  NEW candidates: {len(new_rows)}  ->  {INBOX_PATH}")
+    print(f"  Digest written ->  {DIGEST_PATH}")
     if new_rows:
-        print("  Review them, then move the good ones into your master registry")
-        print("  and add their DOI/title to registry_seed.csv so they aren't suggested again.")
+        top = new_rows[0]
+        print(f"  Top pick: [{top['auto_tier_guess']}] {top['title'][:70]}")
     return new_rows
 
 
 def selftest():
-    """Offline check of filter + dedupe + writer with fake API output."""
     print("  Running offline self-test (no internet)...")
+    cfg = load_config()
     sample = {
-        "openalex": [
-            rec(source_api="OpenAlex", title="Burnout and cortisol in remote employees",
+        "a": [
+            rec(source_api="OpenAlex",
+                title="A systematic review and meta-analysis of burnout in remote employees",
                 authors="A. Author", year="2026", pub_date="2026-07-01", type="article",
                 venue="Journal of Occupational Health Psychology", open_access="OA",
-                doi="10.1000/new-oa-1", url="https://doi.org/10.1000/new-oa-1"),
-            rec(source_api="OpenAlex", title="A study about butterflies in spring",  # off-topic -> filtered
-                authors="B. Author", year="2026", pub_date="2026-07-02", type="article",
+                doi="10.1000/trust-meta", url="https://doi.org/10.1000/trust-meta"),
+            rec(source_api="arXiv", title="A speculative preprint on employee attention and AI",
+                authors="B. Author", year="2026", pub_date="2026-07-02", type="preprint",
+                venue="arXiv", open_access="OA", preprint="yes",
+                doi="", url="https://arxiv.org/abs/0000.00000"),
+            rec(source_api="Crossref", title="Does a dopamine detox improve worker focus",
+                authors="C. Writer", year="2026", pub_date="2026-06-30", type="journal-article",
+                venue="Some Journal", doi="10.1000/myth", url="x"),
+            rec(source_api="OpenAlex", title="Butterflies of the alpine meadow in spring",
+                authors="D. Naturalist", year="2026", pub_date="2026-07-03", type="article",
                 venue="Lepidoptera Today", doi="10.1000/offtopic", url="x"),
-        ],
-        "crossref": [
-            rec(source_api="Crossref", title="Burnout and Cortisol in Remote Employees",  # dup title
-                authors="A. Author", year="2026", pub_date="2026-7-1", type="journal-article",
-                doi="10.1000/new-oa-1", url="x"),
-            rec(source_api="Crossref", title="Hybrid work and manager engagement outcomes",
-                authors="C. Writer", year="2026", pub_date="2026-06-28", type="journal-article",
-                doi="10.1000/new-oa-2", url="https://doi.org/10.1000/new-oa-2"),
-        ],
+        ]
     }
-    # ensure a clean inbox for the test
     if INBOX_PATH.exists():
         INBOX_PATH.unlink()
-    rows = scan(sample)
+    rows = scan(sample, cfg)
     titles = [r["title"] for r in rows]
-    assert any("Hybrid work" in t for t in titles), "expected the hybrid-work item"
-    assert not any("butterflies" in t.lower() for t in titles), "off-topic should be filtered"
-    assert sum("burnout and cortisol" in t.lower() for t in titles) == 1, "title dedupe failed"
-    print(f"  OK — {len(rows)} unique on-topic candidates kept (off-topic + duplicate removed).")
-    print(f"  Wrote: {INBOX_PATH}")
+    assert not any("butterfl" in t.lower() for t in titles), "off-topic should be filtered"
+    # trusted peer-reviewed meta-analysis must outrank the preprint
+    assert rows[0]["title"].startswith("A systematic review"), "scoring order wrong"
+    assert rows[0]["auto_tier_guess"] == "A?", f"expected A?, got {rows[0]['auto_tier_guess']}"
+    pre = next(r for r in rows if r["preprint"] == "yes")
+    assert int(pre["auto_score"]) < int(rows[0]["auto_score"]), "preprint should score lower"
+    myth = next(r for r in rows if "dopamine detox" in r["title"].lower())
+    assert myth["myth_flag"] == "MYTH-CHECK", "neuromyth flag missing"
+    assert DIGEST_PATH.exists(), "digest not written"
+    print(f"  OK — {len(rows)} candidates kept, scored & sorted.")
+    print(f"       top = [{rows[0]['auto_tier_guess']}] {rows[0]['title'][:60]}")
+    print(f"       preprint scored {pre['auto_score']} vs top {rows[0]['auto_score']}; "
+          f"myth flagged: {myth['myth_flag']}")
+    print(f"  Wrote: {INBOX_PATH}  and  {DIGEST_PATH}")
     return 0
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Weekly radar for new workplace-neuroscience sources.")
+    ap = argparse.ArgumentParser(description="Weekly radar (auto-scored) for workplace-neuroscience sources.")
     ap.add_argument("--selftest", action="store_true", help="offline logic check, no internet")
     args = ap.parse_args()
-    if args.selftest:
-        return selftest()
-    run_online()
-    return 0
+    return selftest() if args.selftest else (run_online() and 0) or 0
 
 
 if __name__ == "__main__":
