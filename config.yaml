@@ -16,24 +16,101 @@ max_new_total: 120
 
 # A candidate is kept only if its title/venue contains at least ONE of these
 # words. This filters out off-topic hits from the broad search queries.
-must_match_any:
+# --- topic filter (three levels) -------------------------------------------
+# context : the paper must sit in a world-of-work setting. Required.
+# subject : optional second gate. Leave empty for wider recall; fill it in to
+#           tighten the feed to brain/stress/wellbeing themes only.
+# exclude : hard reject regardless of the above. This is what keeps agronomy,
+#           materials science and clinical-patient studies out of the feed.
+
+must_match_context:
   - work
   - job
-  - employee
+  - employe          # employee / employees / employer / employment
   - workplace
   - occupational
-  - burnout
-  - stress
+  - worker
+  - staff
+  - manager
+  - managerial
+  - leadership
   - remote
   - hybrid
-  - attention
-  - focus
-  - leadership
-  - engagement
-  - manager
-  - cognitive
-  - wellbeing
-  - technostress
+  - telework
+  - teleworker
+  - organization
+  - organisation
+  - organizational
+  - organisational
+  - team
+  - career
+  - labour
+  - labor
+  - professional
+
+must_match_subject: []
+  # Suggested contents if you ever want to tighten the feed — paste in place of []:
+  #  - burnout
+  #  - stress
+  #  - exhaustion
+  #  - wellbeing
+  #  - well-being
+  #  - mental health
+  #  - cognitive
+  #  - attention
+  #  - focus
+  #  - engagement
+  #  - technostress
+  #  - fatigue
+  #  - sleep
+  #  - brain
+  #  - neuro
+  #  - psychological
+  #  - motivation
+  #  - productivity
+
+exclude_any:
+  # agronomy / plant science
+  - crop
+  - drought
+  - soil
+  - agronom
+  - "plant "
+  - germinab
+  # materials / chemistry
+  - alloy
+  - microstructur
+  - thermal
+  - biodegrad
+  - chemistr
+  - molecul
+  - catalys
+  - nanoparticle
+  # lab / animal models
+  - in vitro
+  - murine
+  - " rats"
+  - " mice"
+  # clinical patient outcomes (not occupational health)
+  - oncolog
+  - cancer
+  - tumor
+  - tumour
+  - chemotherap
+  - stoma
+  - palliativ
+  - carcinom
+  - alzheimer
+  - dementia
+  - parkinson
+  - stroke patient
+  - maternal
+  - fetal
+  - neonat
+  - pregnan
+  - biomedicine
+  - microbiom
+  - gene expression
 
 # The search phrases sent to every enabled source. Add/remove freely.
 queries:

@@ -300,9 +300,32 @@ CONNECTORS = {"openalex": from_openalex, "crossref": from_crossref,
 # --------------------------------------------------------------------------- #
 # core
 # --------------------------------------------------------------------------- #
-def matches_topic(r, must_match_any):
+def matches_topic(r, cfg):
+    """Three-level topic gate.
+
+    context  — the paper must sit in a world-of-work setting (required)
+    subject  — optional second gate; if the list is non-empty the paper must
+               also touch one of these themes. Leave empty for wider recall.
+    exclude  — hard reject, regardless of the two gates above. This is what
+               keeps agronomy, materials science and clinical-patient studies
+               out of a workplace-neuroscience feed.
+
+    Falls back to the legacy single-list `must_match_any` key if the new keys
+    are absent, so an old config.yaml keeps working.
+    """
     hay = (r["title"] + " " + r["venue"]).lower()
-    return any(k.lower() in hay for k in must_match_any) if must_match_any else True
+
+    ctx = cfg.get("must_match_context") or cfg.get("must_match_any") or []
+    subj = cfg.get("must_match_subject") or []
+    excl = cfg.get("exclude_any") or []
+
+    if excl and any(k.lower() in hay for k in excl):
+        return False
+    if ctx and not any(k.lower() in hay for k in ctx):
+        return False
+    if subj and not any(k.lower() in hay for k in subj):
+        return False
+    return True
 
 
 def scan(records_by_source, cfg=None):
@@ -314,7 +337,7 @@ def scan(records_by_source, cfg=None):
 
     for records in records_by_source.values():
         for r in records:
-            if not r["title"] or not matches_topic(r, cfg["must_match_any"]):
+            if not r["title"] or not matches_topic(r, cfg):
                 continue
             d, t = norm_doi(r["doi"]), norm_title(r["title"])
             if (d and (d in known_dois or d in seen_doi)) or (t and (t in known_titles or t in seen_title)):
@@ -342,12 +365,34 @@ def scan(records_by_source, cfg=None):
     return new_rows
 
 
+def inbox_header():
+    """Return the header row currently on disk, or None if the file is absent/empty."""
+    if not INBOX_PATH.exists():
+        return None
+    with INBOX_PATH.open(encoding="utf-8", newline="") as f:
+        for row in csv.reader(f):
+            return row
+    return None
+
+
 def write_candidates(new_rows):
     CAND_DIR.mkdir(parents=True, exist_ok=True)
-    inbox_exists = INBOX_PATH.exists()
+
+    # Guard against schema drift. Appending 17-column rows under a stale
+    # 14-column header silently misaligns every column downstream, and the
+    # damage is invisible until someone opens the file. Fail loudly instead.
+    header = inbox_header()
+    if header is not None and header != FIELDS:
+        raise SystemExit(
+            f"\ninbox.csv header does not match FIELDS.\n"
+            f"  on disk : {len(header)} columns\n"
+            f"  expected: {len(FIELDS)} columns\n"
+            f"Run  python3 fix_inbox.py  to migrate the file, then re-run this scan.\n"
+        )
+
     with INBOX_PATH.open("a", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS)
-        if not inbox_exists:
+        if header is None:
             w.writeheader()
         for r in new_rows:
             w.writerow({k: r.get(k, "") for k in FIELDS})
