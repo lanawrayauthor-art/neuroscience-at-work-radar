@@ -1,44 +1,44 @@
-# Weekly source radar — digest (2026-08-03)
+# Weekly source radar — digest (2026-08-10)
 
 Found **56** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
 
 ## Top candidates
 
-1. **Remote Work Flexibility, Technological Infrastructure, and Managerial Support as Drivers of Employee Productivity: The Moderating Role of Job Satisfaction** — Journal of Intelligent Decision Making and Information Science (2026)
-   guess A? · score 12 · OA · article [link](https://doi.org/10.59543/jidmis.v3.1254)
+1. **Heart rate variability and burnout risk among healthy employees in jobs involving interaction with others** — Frontiers in Physiology (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fphys.2026.1908141)
 
-2. **Investigating the Impact of Occupational Stress on Employee Performance** — Journal of Social Sciences & Humanities (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.62810/jssh.v3i3.351)
+2. **Preliminary study on the prevalence of workplace psychological terror among Hungarian athletes** — Frontiers in Sports and Active Living (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fspor.2026.1828117)
 
-3. **Singeing with Spent Motor Tyres: Environmental and Occupational Health-Risk Awareness Among Abattoir Workers in Makurdi, Nigeria** — Journal of Food Innovation, Nutrition, and Environmental Sciences (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.70851/jfines.2026.3(3).276.290)
+3. **Angry and “productive”: engagement in gamified precarious work** — Frontiers in Psychology (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1833833)
 
-4. **Digital stress, employee performance, and mental well-being: examining the moderated mediation role of social media use** — Frontiers in Human Dynamics (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fhumd.2026.1828819)
+4. **A Systematic Review of Cybercrime in Hybrid Cyber–Physical Space** — American Journal of Criminal Justice (2026)
+   guess A? · score 9 · OA · review [link](https://doi.org/10.1007/s12103-026-09938-8)
 
-5. **Workplace Mental Health Programs for Healthcare Workers: A Systematic Review** — International Journal of Environmental Research and Public Health (2026)
-   guess A? · score 10 · OA · review [link](https://doi.org/10.3390/ijerph23081002)
+5. **Moral emotion processing in euthymic bipolar disorder: insights from network analysis** — European Archives of Psychiatry and Clinical Neuroscience (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.1007/s00406-026-02344-5)
 
-6. **Measurement of Reliability and Construct Validity of Intensification of Job Demands Scale** — Journal Research of Social Science Economics and Management (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.59141/jrssem.v5i12.1010)
+6. **Biopsychosocial and organizational factors explaining professional engagement** — Frontiers in Public Health (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpubh.2026.1906716)
 
-7. **Sustainable Human Resource Practices and Their Impact on SDG 8: Decent Work and Economic Growth** — Journal of Intelligent Decision Making and Information Science (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.59543/jidmis.v3.1056)
+7. **Mapping psychosocial work exposures across construction: a multilevel evidence gap map with implications for offsite construction** — Frontiers in Built Environment (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fbuil.2026.1868534)
 
-8. **Beyond Economic Efficiency: A Strategic Communication and Digital Governance Framework for Saudi Arabia’s Unified Health Insurance Reform toward Vision 2030** — Journal of Intelligent Decision Making and Information Science (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.59543/jidmis.v3.1335)
+8. **When leadership becomes epistemic: paradoxes of educational leadership in AI-mediated systems** — Frontiers in Education (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/feduc.2026.1919644)
 
-9. **A Fairness-Constrained Multimodal Adaptive Reinforcement Learning Framework for Personalized Candidate Evaluation in Virtual Interviews** — Journal of Intelligent Decision Making and Information Science (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.59543/jidmis.v3.1036)
+9. **Mapping desires for cities design: a conceptual framework and methodological roadmap for well-being-centred urban form in the 15-minute city** — Frontiers in Environmental Science (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fenvs.2026.1811931)
 
-10. **Remote training of behavioral intervention facilitators: model development and lessons learned** — Frontiers in Digital Health (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fdgth.2026.1768119)
+10. **Mapping the symptom network of anxiety, depression, somatic symptoms and sleep disturbances in 15,642 infertile women: a retrospective cohort study identifying targets for fertility care** — Frontiers in Public Health (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpubh.2026.1884236)
 
-11. **Reproducible Performance Evaluation of a Hybrid Hadoop–Spark Big Data Architecture Using Urban Mobility and Global Event Datasets** — Journal of Intelligent Decision Making and Information Science (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.59543/jidmis.v3.1068)
+11. **Human Capital Development Programs, Employee Performance, and Employee Well-Being During Poly-Crisis: The Role of Work–Family Conflict and Technostress at SMEs in Lebanon** — Societies (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3390/soc16080249)
 
-12. **Leveraging large language models (LLMs) for GeoAI-enabled digital agro-advisory** — Frontiers in Remote Sensing (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/frsen.2026.1839369)
+12. **Navigating Face-To-Face Communication in the Era of Remote Work among Gen Z** — Proceeding of International Conference on Business Economics Social Sciences and Humanities (2026)
+   guess A? · score 9 · OA · conference-paper [link](https://doi.org/10.34010/icobest.v9i.914)
 
 ---
 Full list with all columns: `candidates/inbox.csv`  ·  one file per week: `candidates/candidates_YYYY-Www.csv`
