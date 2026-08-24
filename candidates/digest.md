@@ -1,44 +1,44 @@
-# Weekly source radar — digest (2026-08-17)
+# Weekly source radar — digest (2026-08-24)
 
-Found **75** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
+Found **80** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
 
 ## Top candidates
 
-1. **Crafting work with AI: human–AI collaborative job crafting, human–AI fit, and employee job performance** — Frontiers in Psychology (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1903517)
+1. **Do Females and Males Experience Occupational Stress Differently? Insights From a Meta-Analysis.** — Saf Health Work (2026)
+   guess A? · score 12 · OA · review-article; review; journal article [link](https://doi.org/10.1016/j.shaw.2026.03.003)
 
-2. **From routine to identity: the Habit-Trait Crystallization Model of personality change in the workplace** — SN Social Sciences (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.1007/s43545-026-01636-w)
+2. **Motivation under pressure: a systematic review of psychological and organizational factors in emergency volunteering** — Safety Science (2026)
+   guess A? · score 11 · OA · review [link](https://doi.org/10.1016/j.ssci.2026.107425)
 
-3. **Enhancing Workplace Culture Among Lecturers at Colleges in Ho Chi Minh City: Policy Issues and Strategic Solutions** — International Journal of Social Science and Human Research (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.47191/ijsshr/v9-i8-23)
+3. **The impact of technostress on female teachers’ perceived career progression: the mediating role of work–family conflict** — Frontiers in Psychology (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1881723)
 
-4. **Transforming work or eroding social capital? How reliance on artificial intelligence drives workplace involution** — Frontiers in Psychology (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1842907)
+4. **Always On, Always Alert: Occupational Stress, Burnout, and Coping Strategies Among IT and Cybersecurity Professionals in Bengaluru, India** — International Journal of Science and Research (IJSR) (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.21275/sr26817224851)
 
-5. **The mediating role of organizational trust in the impact of digital leadership on job performance and job satisfaction** — Frontiers in Psychology (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1879796)
+5. **Biomechanical Wellness: A Human-Centered Framework Integrating Biomechanics, Ergonomics, Neurophysiology, and Organizational Design for Sustainable Workplace Wellbeing** — The European Journal for Sport Sciences Technology (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.58305/ejsst.v16i1.788)
 
-6. **Human-Centered AI Adoption in Knowledge Work: A PRISMA-ScR Scoping Review of Technostress, Trust, Autonomy, and Employee Well-Being** — Informatics (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3390/informatics13080130)
+6. **Using emoji reduces dropout of remote workers: a causal analysis on GitHub** — Humanities and Social Sciences Communications (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.1057/s41599-026-08748-x)
 
-7. **Artificial intelligence in workplace health: an integrative framework for technological integration, ethical challenges, and business imperatives** — Humanities and Social Sciences Communications (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.1057/s41599-026-08520-1)
+7. **Development and Validation of a Well-being Scale for Hybrid Workers in Thailand: A Mixed Methods Study** — Suranaree Journal of Social Science (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.55766/sjss285670)
 
-8. **From silence to engagement: how leadership shapes employee participation in workplace mental wellbeing initiatives** — Employee Relations (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.1108/er-12-2025-1133)
+8. **Relationship of rotating-shift work with lifestyle and health status of hospital employees** — PLOS Global Public Health (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.1371/journal.pgph.0006956)
 
-9. **Understanding barriers and facilitators of integrating management of Moderate Acute Malnutrition (MAM) into the Ethiopian primary health care system using Consolidated Framework for Implementation Research (CFIR)** — PLOS Global Public Health (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.1371/journal.pgph.0007127)
+9. **Evaluating the Effectiveness of a Privacy-First AI-Based Multimodal Mood Monitoring System (Sanrakshak) among Office Employees** — International Journal of Social Science Humanity & Management Research (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.58806/ijsshmr.2026.v5i8n16)
 
-10. **A Comparative Analysis of U.S. and Canadian Healthcare Expenditures (1975–2008): Insights from Canada's Regulatory Framework** — INTERNATIONAL JOURNAL OF SOCIAL SCIENCES AND MANAGEMENT RESEARCH (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.56201/ijssmr.vol.11no5.2025.pg351.375)
+10. **NeuroTectonic Theory (NTT): A Multilevel Connection Dynamics Framework for** — Journal of Interdisciplinary Social Sciences Review ISSN 3078-8358 (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.60087/jissr.v4i01.364)
 
-11. **Dual pathways of generative AI use: role ambiguity and self-efficacy in employee-AI collaboration** — Frontiers in Psychology (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1793095)
+11. **Association between ultra-processed food consumption and perceived stress among teaching professionals: a gender-stratified cross-sectional study from Urban India** — Frontiers in Nutrition (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fnut.2026.1889456)
 
-12. **An ecosyndemic framework for understanding obesity: Spatial clustering of health, environmental and socioeconomic disadvantage in the Netherlands** — PLoS ONE (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.1371/journal.pone.0354964)
+12. **A modified hybrid hub-spoke model for assistive technology: institutional design for procurement, financing, and market-shaping** — Frontiers in Rehabilitation Sciences (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fresc.2026.1880845)
 
 ---
 Full list with all columns: `candidates/inbox.csv`  ·  one file per week: `candidates/candidates_YYYY-Www.csv`
