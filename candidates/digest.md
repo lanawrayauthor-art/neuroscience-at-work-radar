@@ -1,44 +1,44 @@
-# Weekly source radar — digest (2026-08-24)
+# Weekly source radar — digest (2026-08-31)
 
-Found **80** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
+Found **85** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
 
 ## Top candidates
 
-1. **Do Females and Males Experience Occupational Stress Differently? Insights From a Meta-Analysis.** — Saf Health Work (2026)
-   guess A? · score 12 · OA · review-article; review; journal article [link](https://doi.org/10.1016/j.shaw.2026.03.003)
+1. **Changes in work-related boredom and their affective and behavioural consequences: the moderating role of job control** — Work & Stress (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.1080/02678373.2026.2718053)
 
-2. **Motivation under pressure: a systematic review of psychological and organizational factors in emergency volunteering** — Safety Science (2026)
-   guess A? · score 11 · OA · review [link](https://doi.org/10.1016/j.ssci.2026.107425)
+2. **Comprehensively understanding K-12 teachers’ occupational health: a convergent mixed-methods exploration of stress and wellbeing** — Frontiers in Education (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/feduc.2026.1870113)
 
-3. **The impact of technostress on female teachers’ perceived career progression: the mediating role of work–family conflict** — Frontiers in Psychology (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1881723)
+3. **Digital strain in the workplace: the role of instrumental social platform use on employee emotional exhaustion** — Frontiers in Sociology (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fsoc.2026.1878074)
 
-4. **Always On, Always Alert: Occupational Stress, Burnout, and Coping Strategies Among IT and Cybersecurity Professionals in Bengaluru, India** — International Journal of Science and Research (IJSR) (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.21275/sr26817224851)
+4. **Synergistic Impact of Environmental Pollution and Occupational Stress on Sperm DNA Integrity Unveiling Hidden Drivers of Male Infertility** — Fertility Science and Research (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.25259/fsr_62_2025)
 
-5. **Biomechanical Wellness: A Human-Centered Framework Integrating Biomechanics, Ergonomics, Neurophysiology, and Organizational Design for Sustainable Workplace Wellbeing** — The European Journal for Sport Sciences Technology (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.58305/ejsst.v16i1.788)
+5. **Employee Engagement Strategies in Multispeciality Hospitals: A Critical Review and Integrated Conceptual Framework** — Zenodo (CERN European Organization for Nuclear Research) (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.5281/zenodo.22171151)
 
-6. **Using emoji reduces dropout of remote workers: a causal analysis on GitHub** — Humanities and Social Sciences Communications (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.1057/s41599-026-08748-x)
+6. **Barriers to occupational health and safety management in micro and small enterprises: a multi-level analysis from a developing country context** — Safety Science (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.1016/j.ssci.2026.107440)
 
-7. **Development and Validation of a Well-being Scale for Hybrid Workers in Thailand: A Mixed Methods Study** — Suranaree Journal of Social Science (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.55766/sjss285670)
+7. **Autonomous Enterprise Platforms: A Framework for AI-Guided Decision Loops, Predictive Intelligence, and Continuous Organizational Adaptation** — International Journal of Scientific Research in Computer Science Engineering and Information Technology (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.32628/cseit26124240)
 
-8. **Relationship of rotating-shift work with lifestyle and health status of hospital employees** — PLOS Global Public Health (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.1371/journal.pgph.0006956)
+8. **Social Media Engagement, Mental Health and Physical Health of Employed Late Adolescents: Basis for a Digital Wellness Awareness Program** — International Journal of Innovative Science and Research Technology (IJISRT) (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.38124/ijisrt/26aug462)
 
-9. **Evaluating the Effectiveness of a Privacy-First AI-Based Multimodal Mood Monitoring System (Sanrakshak) among Office Employees** — International Journal of Social Science Humanity & Management Research (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.58806/ijsshmr.2026.v5i8n16)
+9. **Perceived STEAM-integrated music education and students’ innovative competence: parallel indirect associations through creative self-efficacy and context-specific learning engagement** — Frontiers in Psychology (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1923767)
 
-10. **NeuroTectonic Theory (NTT): A Multilevel Connection Dynamics Framework for** — Journal of Interdisciplinary Social Sciences Review ISSN 3078-8358 (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.60087/jissr.v4i01.364)
+10. **The numb efficiency paradox: AI work pressure, affective numbing, and professional judgment in organizationally digitally mediated work** — Frontiers in Psychology (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1900940)
 
-11. **Association between ultra-processed food consumption and perceived stress among teaching professionals: a gender-stratified cross-sectional study from Urban India** — Frontiers in Nutrition (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fnut.2026.1889456)
+11. **How Is AI Transforming the Task Characteristics and the Experience of Vulnerable and Minority Employees in the Hospitality Sector?** — Systems Research and Behavioral Science (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.1002/sres.70148)
 
-12. **A modified hybrid hub-spoke model for assistive technology: institutional design for procurement, financing, and market-shaping** — Frontiers in Rehabilitation Sciences (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fresc.2026.1880845)
+12. **The Human Side of Digital Transformation: How HRM Practices Influence Employee Adaptability and Performance** — International Journal of Emerging Multidisciplinaries Social Science (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.54938/ijemdss.2026.05.3.767)
 
 ---
 Full list with all columns: `candidates/inbox.csv`  ·  one file per week: `candidates/candidates_YYYY-Www.csv`
