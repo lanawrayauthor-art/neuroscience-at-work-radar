@@ -1,44 +1,44 @@
-# Weekly source radar — digest (2026-09-14)
+# Weekly source radar — digest (2026-09-21)
 
-Found **51** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
+Found **58** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
 
 ## Top candidates
 
-1. **From Engagement to Attitude: An Analytical Study of Employee Engagement and Positive Workplace Orientation** — International Journal of Innovative Research in Engineering & Multidisciplinary Physical Sciences (2026)
-   guess A? · score 12 · OA · article [link](https://doi.org/10.37082/ijirmps.v14.i5.233211)
+1. **Remote Work and Employee Mental Well-being: Findings from NGOs in Nairobi County, Kenya** — International Journal of Science and Research (IJSR) (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.21275/sr26913165100)
 
-2. **Workplace adoption of wearable devices: insights into Greek employees’ intentions and usage trends** — Journal of Science and Technology Policy Management (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.1108/jstpm-09-2025-0450)
+2. **Work stress and healthy aging: A conceptual framework for the Semmelweis study and the Semmelweis-EUniWell workplace health promotion model program** — GeroScience (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.1007/s11357-026-02526-y)
 
-3. **Burnout and secondary traumatic stress in child protection workers: Untangling the role of personal and work-related factors using meta-analysis** — Clinical Psychology Review (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.1016/j.cpr.2026.102801)
+3. **Ethical Leadership and Gen Z Engagement in the Digital Era: A Systematic Review** — Jurnal Ilmiah Manajemen Kesatuan (2026)
+   guess A? · score 10 · OA · review [link](https://doi.org/10.37641/jimkes.v14i5.5454)
 
-4. **Exploring the experiences, views, and needs of family members of emergency response workers: a systematic review and meta-synthesis.** — Eur J Psychotraumatol (2026)
-   guess A? · score 10 · OA · systematic review; review-article; review; journal article [link](https://doi.org/10.1080/20008066.2026.2713266)
+4. **The association between perceived organizational support and academic job burnout: a comparative study of career stages and professional sectors** — Frontiers in Psychology (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1782137)
 
-5. **AGENTIC SOCIO-TECHNICAL SYSTEMS FOR AGING DEMOGRAPHICS: INTEGRATING GRAPH NEURAL NETWORKS AND DEEP REINFORCEMENT LEARNING FOR RESILIENT HEALTHCARE LOGISTICS** — International Journal of Progressive Research in Engineering Management and Science (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.58257/ijprems53211)
+5. **Harmony Theory: A Theoretical Framework Highlighting How Relational Alignment, Rhythmic Attunement, Eco Systemic Interdependence and Resonant Leadership Among Others Are the Key Factors Influencing Organizational Internal Harmony and Flourishing** — INTERNATIONAL JOURNAL OF SOCIAL SCIENCES AND MANAGEMENT RESEARCH (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.56201/ijssmr.vol.12no3.2026.pg665.681)
 
-6. **The Impact of Artificial Intelligence on Education and the Workplace: A Comprehensive Literature Review** — Zenodo (CERN European Organization for Nuclear Research) (2026)
-   guess B? · score 8 · OA · article [link](https://doi.org/10.5281/zenodo.22705489)
+6. **Anthropometric and nutritional analysis of Portuguese retail workers for ergonomic design applications: a cross-sectional study in northern Portugal** — Frontiers in Public Health (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpubh.2026.1822394)
 
-7. **The cognitive work of acute care nurses: A hybrid model concept analysis.** — Int J Nurs Stud Adv (2026)
-   guess B? · score 8 · OA · research-article; journal article [link](https://doi.org/10.1016/j.ijnsa.2026.100644)
+7. **A qualitative study on the delayed manifestation of night shift-related intrusive memories in non-shift nurses with a history of night shift work** — Frontiers in Public Health (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpubh.2026.1938159)
 
-8. **Employees Engagement: Ensuring Employee’s Reasonable Opportunity of Being Heard** — International Journal For Multidisciplinary Research (2026)
-   guess B? · score 7 · OA · article [link](https://doi.org/10.36948/ijfmr.2026.v08i05.87718)
+8. **Technostress Responses in AI–Augmented Work: Emotional Exhaustion, Performance, and AI–Related Impostorism** — Lecture notes in computer science (2026)
+   guess A? · score 9 · conference-paper [link](https://doi.org/10.1007/978-3-032-38014-2_2)
 
-9. **School principals’ use of music for mood regulation: associations with stress and emotional demands at work** — International Journal of Educational Management (2026)
-   guess B? · score 7 · OA · article [link](https://doi.org/10.1108/ijem-05-2026-0654)
+9. **Technostress and Employee Performance in AI-Enabled and Hybrid Work Contexts: A Systematic Literature Review** — Jurnal Ilmiah Manajemen Kesatuan (2026)
+   guess A? · score 9 · OA · review [link](https://doi.org/10.37641/jimkes.v14i5.5442)
 
-10. **Decoupling work motivation and work performance: Insights into employee work behavior** — Divine Word International Journal of Management and Humanities (DWIJMH) (ISSN 2980-4817) (2026)
-   guess B? · score 7 · OA · article [link](https://doi.org/10.62025/dwijmh.v5i3.381)
+10. **FROM REACTIVE RESPONSE TO INSTITUTIONAL CAPACITY: AN UMBRELLA REVIEW AND PROPOSED FRAMEWORK FOR BURNOUT PREVENTION IN HEALTHCARE SETTINGS** — Health and Society (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.51249/hs.v6i04.3213)
 
-11. **Associations between work stressors, measured by the demand-control-support and effort-reward-imbalance models, and diurnal cortisol concentrations in saliva.** — Int Arch Occup Environ Health (2026)
-   guess B? · score 7 · OA · research-article; journal article [link](https://doi.org/10.1007/s00420-026-02209-3)
+11. **Linking job autonomy and gig work performance: The serial mediating roles of work–life balance and job engagement** — Economic and Industrial Democracy (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.1177/0143831x261485194)
 
-12. **Exploring opportunities with activity-based work in Swedish public workplaces-a qualitative analysis based on the socio-ecological model.** — Int J Qual Stud Health Well-being (2026)
-   guess B? · score 7 · OA · research-article; journal article [link](https://doi.org/10.1080/17482631.2026.2728848)
+12. **One Size Does Not Fit All: Digital Readiness and Differentiated Learning in Age- Diverse Hotel Front Office Teams** — International Journal of Social Science and Human Research (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.47191/ijsshr/v9-i9-24)
 
 ---
 Full list with all columns: `candidates/inbox.csv`  ·  one file per week: `candidates/candidates_YYYY-Www.csv`
