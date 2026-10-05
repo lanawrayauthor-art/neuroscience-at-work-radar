@@ -1,44 +1,44 @@
-# Weekly source radar — digest (2026-09-28)
+# Weekly source radar — digest (2026-10-05)
 
-Found **53** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
+Found **84** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
 
 ## Top candidates
 
-1. **Work-focused cognitive behavioural therapy for common mental disorders: a systematic review and meta-analysis.** — BMC Psychol (2026)
-   guess A? · score 12 · OA · meta-analysis; systematic review; review-article; journal article [link](https://doi.org/10.1186/s40359-026-05648-2)
+1. **Artificial intelligence-driven work systems and employee burnout: a systematic review of mechanisms, moderators, and a dynamic meta-system framework** — Frontiers in Psychology (2026)
+   guess A? · score 14 · OA · review [link](https://doi.org/10.3389/fpsyg.2026.1922281)
 
-2. **From AI Adoption to AI-Augmented Work: How AI-Enabled HRM Shapes Hospitality Employee Well-Being through Job Redesign and Work Autonomy** — International Journal of Science and Research (IJSR) (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.21275/sr26922155006)
+2. **INTELLIGENT CAD/CAM INTEGRATION FOR ADAPTIVE MANUFACTURING: A SYSTEMATIC REVIEW OF AI AND IOT FRAMEWORKS IN INDUSTRY 4.0** — World Journal of Advanced Engineering Technology and Sciences (2026)
+   guess A? · score 12 · OA · review [link](https://doi.org/10.30574/wjaets.2026.21.1.0460)
 
-3. **When AI works, employees worry: the vigilance cost of AI delegation in hybrid work** — Frontiers in Psychology (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1914119)
+3. **The Influence of Digital Workload, Role Ambiguity, and Digital Skill Gap on Technostress in HR Context among Digital Startup Employees** — Greenation International Journal of Law and Social Sciences (2026)
+   guess A? · score 12 · OA · article [link](https://doi.org/10.38035/gijlss.v4i4.848)
 
-4. **Flexible Working Arrangements and Employee Retention: Longitudinal Evidence from a Shariah-Compliant Knowledge-Intensive Organisation** — International Journal of Academic Research in Business and Social Sciences (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.6007/ijarbss/v16-i9/29077)
+4. **Understanding teachers’ technostress creators due to IT use at work: a mixed-methods study** — Frontiers in Psychology (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1887403)
 
-5. **The moderating role of techno-related control in the relationship between algorithmic management and technostress among sport science professionals** — Frontiers in Public Health (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpubh.2026.1972493)
+5. **Physiological activation regimes reveal distinct autonomic mechanisms underlying operational performance under cognitive workload and stress** — Frontiers in Neuroergonomics (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fnrgo.2026.1946611)
 
-6. **Operational and organizational training for managing work stress among police investigation officers: a global perspective** — Frontiers in Psychology (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1919749)
+6. **The effects of coherent breathing and blue light after an acute stress on sleepiness and the stress response in a workplace setting: A randomized double-blind cross-over trial** — PLoS ONE (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.1371/journal.pone.0357293)
 
-7. **Cognitive reserve and adaptive resilience: a conceptual analysis of a cross-species framework for neuropsychology and cognitive aging** — Frontiers in Psychology (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1948103)
+7. **Exploring agile leadership, ambidextrous leadership, organizational agility, and innovation behaviors among nurse managers: an explanatory mixed-methods study** — Frontiers in Health Services (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/frhs.2026.1950319)
 
-8. **From Tool to Social Actor: A Systematic Review of the Psychological Mechanisms Through Which Conversational AI Reshapes the Employee Experience** — Behav Sci (Basel) (2026)
-   guess A? · score 10 · OA · review-article; review; journal article [link](https://europepmc.org/abstract/PMC/PMC13603245)
+8. **Virtual laboratories in STEM and health higher education: A European scoping review of transferable practices** — Social Sciences & Humanities Open (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.1016/j.ssaho.2026.103769)
 
-9. **Navigating the Digital Storm: A Systematic Review and Meta-Analysis of Technology-Induced Job Insecurity, Its Outcomes and Moderators** — Behav Sci (Basel) (2026)
-   guess A? · score 10 · OA · review-article; review; journal article [link](https://europepmc.org/abstract/PMC/PMC13603130)
+9. **A REVIEW ON THE RELATIONSHIP BETWEEN PSYCHOLOGICAL WELL-BEING AND EMPLOYEE PRODUCTIVITY IN HYBRID WORK ENVIRONMENTS** — Zenodo (CERN European Organization for Nuclear Research) (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.5281/zenodo.23134940)
 
-10. **A Framework for Cross‐National Collective Intelligence Facilitation** — Systems Research and Behavioral Science (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.1002/sres.70166)
+10. **ENTREPRENEURIAL LEADERSHIP DEVELOPMENT AND BUSINESS SUSTAINABILITY: A STUDY OF SAFETY EQUIPMENT FIRMS IN RIVERS STATE, NIGERIA** — International Journal of Science and Research Archive (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.30574/ijsra.2026.21.1.1842)
 
-11. **Longitudinal associations of occupational cumulative noise exposure duration and hearing loss with lipid profiles: a 9-year cohort study** — Frontiers in Public Health (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpubh.2026.1964407)
+11. **Reconceptualizing employee performance in bureaucratic systems: a context-based analysis of gendered role conflict in the South African public sector** — Frontiers in Organizational Psychology (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/forgp.2026.1916691)
 
-12. **TAM-ECM Integration in Digital Transformation and Port Employee Performance: A Bibliometric Systematic Review** — Jurnal Ilmiah Manajemen Kesatuan (2026)
-   guess A? · score 9 · OA · review [link](https://doi.org/10.37641/jimkes.v14i5.5582)
+12. **Designing for lifelong well-being: a pragmatic conceptual framework to bridge the intention–practice gap across educational and professional contexts** — Frontiers in Education (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/feduc.2026.1936747)
 
 ---
 Full list with all columns: `candidates/inbox.csv`  ·  one file per week: `candidates/candidates_YYYY-Www.csv`
