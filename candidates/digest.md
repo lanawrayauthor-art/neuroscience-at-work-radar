@@ -1,44 +1,44 @@
-# Weekly source radar — digest (2026-10-12)
+# Weekly source radar — digest (2026-10-19)
 
-Found **65** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
+Found **70** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
 
 ## Top candidates
 
-1. **Associations between Quality of Life, Compliance, Work–Family Conflict, Job Stress and Job Satisfaction: A Study on Female Readymade Garment Workers** — International Social Science Journal (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.1111/issj.70071)
+1. **School Leadership and Teacher Well-Being: A Systematic Review of Empirical Evidence** — Global Trends in Science and Technology (2026)
+   guess A? · score 12 · OA · review [link](https://doi.org/10.70445/gtst.2.5.2026.1-21)
 
-2. **A Systematic Review of Human Resource Management Strategies for Enhancing Employee Morale: A Case Study of the Wasit Provincial Government** — Future of Work and Digital Management Journal (2026)
-   guess A? · score 10 · OA · review [link](https://openalex.org/W7217582026)
+2. **Workplace Stress, Psychological Safety, and Mental Well-Being Among Healthcare Professionals: A Psychosocial Safety Climate Framework** — Journal of Artificial Intelligence General science (JAIGS) (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.60087/jaigs.v10i01.508)
 
-3. **Leadership, burnout, and organizational mental health: a neuroscience-informed perspective** — Frontiers in Public Health (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpubh.2026.1881851)
+3. **Algorithmic management and gig workers' workplace wellbeing: the moderating role of psychological resilience** — Frontiers in Psychology (2026)
+   guess A? · score 11 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1960382)
 
-4. **Perceived AI support and work outcomes: testing the mediating role of job crafting in AI-supported work** — Frontiers in Psychology (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1824712)
+4. **The impact of AI service quality on researchers’ work wellbeing: a dual-path moderated mediation model** — Frontiers in Psychology (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1946487)
 
-5. **STRATEGIC HUMAN RESOURCE MANAGEMENT, DIGITAL COMMERCE, AND AI-DRIVEN MARKETING: AN INTEGRATED FRAMEWORK FOR SUSTAINABLE BUSINESS GROWTH AND ORGANIZATIONAL PERFORMANCE** — EPH - International Journal of Business & Management Science (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.69980/kzp7nt39)
+5. **Personalized stress detection from wearable physiological signals via Digital Twin-inspired subject embeddings and recurrent neural networks** — Frontiers in Physiology (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fphys.2026.1881803)
 
-6. **WHEN AI MAKES COWORKERS LESS NECESSARY: RELATIONAL DEPENDENCE AND THE NEW PEOPLE-MANAGEMENT CHALLENGE IN KNOWLEDGE WORK** — Social science and management. (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.61784/ssm3101)
+6. **MEASURING CONSCIOUS LEADERSHIP: DEVELOPMENT OF THE TOTAL LEADERSHIP INDEX AS A 100-POINT EXECUTIVE MATURITY ARCHITECTURE** — EPH - International Journal of Business & Management Science (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.69980/8964d158)
 
-7. **Hypertriglyceridemic waist-to-height ratio and the triple burden of hypertension, diabetes, and dyslipidemia in adults: association and network analysis** — Frontiers in Endocrinology (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fendo.2026.1932657)
+7. **Occupational Stress, Workload Burden, and Work–Family Conflict as Predictors of Physical and Mental Health Outcomes Among Nurses: A Comprehensive Review** — International Journal of Drug Delivery Technology (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.25258/ijddt.16.73s.71)
 
-8. **Technostress and trust in AI mediate the association between AI adoption and employee well-being** — Discover Psychology (2026)
-   guess B? · score 8 · OA · article [link](https://doi.org/10.1007/s44202-026-00928-9)
+8. **Maslow’s Hierarchy of Needs Theory as a Psychological Framework for Combating Corruption in Nigeria** — African Journal of Social and Behavioural Sciences (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.68442/ajsbs/2026/v16i8.006)
 
-9. **The Impact of Work-Life Balance and Flexible Work Arrangements on Employee Performance: The Mediating Role of Job Satisfaction among Flexible Workers in Australia** — Business Innovation Management and Entrepreneurship Journal (BIMANTARA) (2026)
-   guess B? · score 8 · OA · article [link](https://doi.org/10.22219/bimantara.v5i02.45162)
+9. **A study of the mediating role of early maladaptive schemas in the effects of occupational stress on cognitive failures among mine workers** — Scientific Reports (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.1038/s41598-026-73082-w)
 
-10. **Mindfulness and Emotional Regulation in Reducing Workplace Stress: A Moderated Mediation Study** — Journal of Management Matters (2026)
-   guess B? · score 8 · OA · article [link](https://doi.org/10.4038/jmm.v13i1.90)
+10. **Institutional digitalization and digital stress: a four-wave observational study of teacher-reported AI-collaborative teaching in physical education** — Frontiers in Psychology (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1973587)
 
-11. **Algorithmic Management, Technostress, and Employee Mental Health in West Java** — JURISMA Jurnal Riset Bisnis & Manajemen (2026)
-   guess B? · score 8 · OA · article [link](https://doi.org/10.34010/jurisma.v16i2.19891)
+11. **Understanding Smart Workplace Engagement among Women Returning from Maternity Leave: Technology Adoption as a Mediator and Work-Life Balance as a Moderator** — International Journal of Drug Delivery Technology (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.25258/ijddt.16.87s.13)
 
-12. **Teaching Performance as a Multilevel HRM Outcome in Educational Organizations: A Systematic Review and Bibliometric Synthesis** — Journal of Economic Education and Entrepreneurship Studies (2026)
-   guess B? · score 8 · OA · review [link](https://doi.org/10.62794/je3s.v7i5.542)
+12. **What Can a Representation Support? Generative Artificial Intelligence and Professional Knowing in Practice** — Postdigital Science and Education (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.1007/s42438-026-00713-w)
 
 ---
 Full list with all columns: `candidates/inbox.csv`  ·  one file per week: `candidates/candidates_YYYY-Www.csv`
