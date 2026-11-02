@@ -1,44 +1,44 @@
-# Weekly source radar — digest (2026-10-26)
+# Weekly source radar — digest (2026-11-02)
 
-Found **81** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
+Found **79** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
 
 ## Top candidates
 
-1. **Management of shift work disorder: an American Academy of Sleep Medicine systematic review, meta-analysis, and GRADE assessment** — Journal of Clinical Sleep Medicine (2026)
-   guess A? · score 12 · OA · review [link](https://doi.org/10.1007/s44470-026-00076-w)
+1. **Privacy Concern, Cognitive Trust and Employee Well-Being in Digital Workplace Information Systems** — Journal of Logistics Informatics and Service Science (2026)
+   guess A? · score 12 · OA · article [link](https://doi.org/10.33168/jliss.2026.1107)
 
-2. **Occupational health risks from climate-related and infectious-disease stressors: A scoping review of worker safety and resilience** — PLoS ONE (2026)
-   guess A? · score 12 · OA · article [link](https://doi.org/10.1371/journal.pone.0361296)
+2. **Digital dinacharya and workplace burnout: a cross-sectional analytical study of occupational health** — International Journal of Research in Medical Sciences (2026)
+   guess A? · score 12 · OA · article [link](https://doi.org/10.18203/2320-6012.ijrms20264183)
 
-3. **The Impact of Job Well-Being on Burnout among Knowledge Economy Workers: The Mediating Role of Digital Disconnection and the Influence of Techno strain** — Emirati Journal of Applied Psychology (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.54878/afez7v10)
+3. **BEYOND AUTOMATION: SUSTAINABLE EMPLOYEE ENGAGEMENT AMONG ACCOUNTING PROFESSIONALS** — Quantum Journal of Social Sciences and Humanities (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.55197/qjssh.v7i5.1400)
 
-4. **BEYOND TECHNOSTRESS AI Fatigue as a Cumulative Adaptation Burden in Education and Work** — Emirati Journal of Applied Psychology (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.54878/bxxewh81)
+4. **Negative affectivity moderates the association between job demands and hair cortisol in healthcare workers: a cross-sectional multi-method study** — Frontiers in Psychology (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1740056)
 
-5. **Childhood Adversity, Emotion Regulation Difficulties and Executive Functioning in Young Adults: A Neurocognitive Framework and Study Protocol** — International Journal of Science and Research (IJSR) (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.21275/sr261021205420)
+5. **An integrated stress-adaptation framework for understanding mental health in developmental coordination disorder and comorbid neurodevelopmental conditions (ISAF-DCD)** — Frontiers in Psychology (2026)
+   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1965095)
 
-6. **Impact of Artificial Intelligence on Employee Productivity and Managerial Decision-Making** — International Journal of Advanced Research in Science Communication and Technology (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.48175/ijarsct-40132)
+6. **Enhancing Employee Performance through Remote Working, Workforce Diversity Management, and Hybrid Workplace: The Mediating Role of Task Innovativeness and the Moderating Role of Gender Diversity** — International Review of Management and Marketing (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.32479/irmm.24565)
 
-7. **Future work self-salience and perceived teacher support as determinants of student engagement: mediating effect of student aspiration** — Frontiers in Education (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/feduc.2026.1894593)
+7. **Digital Transformation in the Workplace: Examining the Impact of Digital Tools on Employee Engagement and Productivity** — Zenodo (CERN European Organization for Nuclear Research) (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.5281/zenodo.23763620)
 
-8. **When flexibility feels like control: competing autonomy and Technostrain pathways linking digital work flexibility to employee well-being** — Frontiers in Psychology (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1977600)
+8. **“The significance of context”: Fit, friction, and function in the work lives of early career academics with ADHD** — PLoS ONE (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.1371/journal.pone.0361208)
 
-9. **Physical and Mental Health Consequences of Work-Related Stress: A Comparative Study of Women and Men** — International Journal of Science and Research (IJSR) (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.21275/sr261020095702)
+9. **A Survey of Agentic AI: Architectures, Reasoning, Planning, Memory, Collaboration, and Real-World Applications** — International Journal of Advanced Research in Science Communication and Technology (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.48175/ijarsct-40490)
 
-10. **An explainable and fair TabNet framework for remote employee performance prediction using multidimensional workplace data** — Scientific Reports (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.1038/s41598-026-76297-z)
+10. **Servant and Authentic Leadership and Employee Outcomes: Exploring the Roles of Organizational Trust and Job Autonomy** — International Review of Management and Marketing (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.32479/irmm.25171)
 
-11. **The Circular Processes Model of Cultural Taxation: The Lived Experiences of Māori Healthcare Employees** — Kōtuitui New Zealand Journal of Social Sciences Online (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.1002/kot2.70061)
+11. **Organizational Culture as a Mediator Between Leadership and Employee Digital Adaptation in SMEs: A Conceptual Review and Research Agenda** — Journal of Economics Finance and Management Studies (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.47191/jefms/v9-i10-49)
 
-12. **Management of shift work disorder: an American Academy of Sleep Medicine clinical practice guideline** — Journal of Clinical Sleep Medicine (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.1007/s44470-026-00084-w)
+12. **Detecting sleep deprivation from running biomechanics using machine learning classification: a comparison between wearable and laboratory motion capture** — Frontiers in Bioengineering and Biotechnology (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.3389/fbioe.2026.1939545)
 
 ---
 Full list with all columns: `candidates/inbox.csv`  ·  one file per week: `candidates/candidates_YYYY-Www.csv`
