@@ -1,44 +1,44 @@
-# Weekly source radar — digest (2026-11-09)
+# Weekly source radar — digest (2026-11-16)
 
-Found **104** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
+Found **41** new candidate(s). Best-scored first. Tiers marked `A?/B?/C?` are **guesses to confirm** — you or Claude set the real A/B/C tier and run the neuromyth check before anything enters the master base.
 
 ## Top candidates
 
-1. **From isolated countermeasures to organizational practice: A systematic review of workplace fatigue-management strategies in healthcare** — Safety Science (2027)
-   guess A? · score 13 · journal-article [link](https://doi.org/10.1016/j.ssci.2026.107551)
+1. **SMART RETAILING IN INTERNET COMMERCE: AN AI-ENABLED CUSTOMER-CENTRIC SERVICE FRAMEWORK** — EPH - International Journal of Business & Management Science (2026)
+   guess A? · score 9 · OA · article [link](https://doi.org/10.69980/jns7m743)
 
-2. **EMPLOYEE ENGAGEMENT AND RETENTION IN AI-ENABLED HOTEL OPERATIONS: EXAMINING THE ROLE OF TECHNOSTRESS** — Quantum Journal of Social Sciences and Humanities (2026)
-   guess A? · score 12 · OA · article [link](https://doi.org/10.55197/qjssh.v7si5.1763)
+2. **Testing the scar and expansion effects of burnout and work engagement on personality traits: A one-year cross-lagged panel study of Japanese employees** — Personality and Individual Differences (2027)
+   guess B? · score 8 · journal-article [link](https://doi.org/10.1016/j.paid.2026.114160)
 
-3. **The dark side of GenAI in the workplace: technostress, loneliness, and the buffering role of transformational leadership** — Frontiers in Psychology (2026)
-   guess A? · score 12 · OA · article [link](https://doi.org/10.3389/fpsyg.2026.1910745)
+3. **Digital Leadership and Employees' Innovative Work Behavior in Creative Design Enterprises: Evidence from Chongqing, China** — WSEAS TRANSACTIONS ON BUSINESS AND ECONOMICS (2026)
+   guess B? · score 8 · OA · article [link](https://doi.org/10.37394/23207.2026.23.164)
 
-4. **Neurodivergencies in the workplace: a PRISMA systematic review of policy effectiveness and employee well-being** — Personnel Review (2026)
-   guess A? · score 11 · OA · review [link](https://doi.org/10.1108/pr-03-2026-0443)
+4. **Designing human and generative AI collaboration: Trade-offs in productivity, satisfaction, and creative diversity.** — PNAS Nexus (2026)
+   guess B? · score 8 · OA · research-article; journal article [link](https://doi.org/10.1093/pnasnexus/pgag353)
 
-5. **Making Sense of Employee Performance in Digital Workplaces_An Interpretative Phenomenological Study of Psychological Safety and Digital Orientation** — International Journal of Educational Research & Social Sciences (2026)
-   guess A? · score 11 · OA · article [link](https://doi.org/10.51601/ijersc.v7i5.1136)
+5. **What knowledge, skills, and attributes are sought by employers hiring occupational therapists to work in mental health services?** — Aust Occup Ther J (2026)
+   guess B? · score 7 · OA · research-article; journal article [link](https://doi.org/10.1111/1440-1630.70137)
 
-6. **Effects of acute caffeine ingestion on sport-specific skills, physical performance, on-field competition performance, and perceived fatigue in team sport athletes: a systematic review and meta-analysis** — Frontiers in Nutrition (2026)
-   guess A? · score 11 · OA · review [link](https://doi.org/10.3389/fnut.2026.1943680)
+6. **Finding the right balance: a framework analysis of staff and service user experiences of moving to remote drug and alcohol support during the COVID-19 pandemic** — BMC Health Services Research (2026)
+   guess B? · score 7 · OA · article [link](https://doi.org/10.1186/s12913-026-15844-w)
 
-7. **Occupational threat response theory: Experiential analysis and intensity in real-time responses to workplace safety threats** — Safety Science (2027)
-   guess A? · score 10 · journal-article [link](https://doi.org/10.1016/j.ssci.2026.107557)
+7. **Transformasi Digital Kinerja Guru: Peran Employee Engagement, Keadilan Organisasi dan Perilaku Kerja di SMPIT Tahfizh Al Fatih Pekanbaru** — Jurnal Ekonomi Manajemen Sistem Informasi (2026)
+   guess B? · score 7 · OA · article [link](https://doi.org/10.38035/jemsi.v8i2.10134)
 
-8. **The Impact of Leadership Styles on Employee Performance and Organizational Success in Small and Medium Enterprises (SMEs)** — The journal of academic science. (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.59613/pxmxwx08)
+8. **Managing Technostress in Hybrid and AI-Mediated Work: An HR Perspective** — IGI Global eBooks (2026)
+   guess B? · score 7 · book-chapter [link](https://doi.org/10.4018/979-8-3373-7739-1.ch008)
 
-9. **EFFORT-REWARD IMBALANCE IMPACT ON PSYCHOSOCIAL STRESS AMONG HOTEL EMPLOYEES AT 3-TO-5-STAR HOTELS, KOTA KINABALU** — Quantum Journal of Social Sciences and Humanities (2026)
-   guess A? · score 10 · OA · article [link](https://doi.org/10.55197/qjssh.v7si5.1753)
+9. **Antecedents and Outcomes of Workplace Loneliness in Finnish Nurses: A Cross-Sectional Survey Study.** — J Adv Nurs (2026)
+   guess B? · score 7 · OA · research-article; journal article [link](https://doi.org/10.1111/jan.70646)
 
-10. **AI Adoption, Adaptation, and Workforce Sustainability in Medical Imaging: Systematic Review and Conceptual Framework.** — JMIR AI (2026)
-   guess A? · score 10 · OA · review-article; review; journal article [link](https://doi.org/10.2196/101944)
+10. **I dislike myself when family role misaligns with work. Family-work conflict, gender ideology, self-acceptance of service sector employees in Malaysia** — International Journal of Management Practice (2028)
+   guess B? · score 6 · journal-article [link](https://doi.org/10.1504/ijmp.2028.10082341)
 
-11. **Strain and lessons learned among healthcare professionals working in intensive care units during COVID-19: a qualitative study** — Social Sciences & Humanities Open (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.1016/j.ssaho.2026.103996)
+11. **Three-year participation patterns and metabolic syndrome-related indicators in a nudge- and gamification-based workplace health promotion program in Japan** — Preventive Medicine (2027)
+   guess B? · score 6 · journal-article [link](https://doi.org/10.1016/j.ypmed.2026.108697)
 
-12. **Application of Graph Theory to Analyze Gaps in Water and Utility Networks to Enhance the Resilience of Urban Infrastructure** — AlQalam Journal of Medical and Applied Sciences (2026)
-   guess A? · score 9 · OA · article [link](https://doi.org/10.54361/ajmas.261116)
+12. **Staff Experiences Delivering Hospital Outreach Post-Suicidal Engagement (HOPE) in a Regional Context: A Qualitative Study.** — Int J Ment Health Nurs (2026)
+   guess B? · score 6 · OA · research-article; journal article [link](https://doi.org/10.1111/inm.70401)
 
 ---
 Full list with all columns: `candidates/inbox.csv`  ·  one file per week: `candidates/candidates_YYYY-Www.csv`
